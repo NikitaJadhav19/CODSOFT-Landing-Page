@@ -1,7 +1,6 @@
 (() => {
   const revealEls = Array.from(document.querySelectorAll('.reveal'));
 
-  // Fallback: if IntersectionObserver isn't supported, just show everything.
   if (!('IntersectionObserver' in window)) {
     revealEls.forEach(el => el.classList.add('show'));
     return;
@@ -21,5 +20,4 @@
 
   revealEls.forEach(el => io.observe(el));
 })();
-
 
